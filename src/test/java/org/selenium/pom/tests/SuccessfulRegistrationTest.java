@@ -25,6 +25,7 @@ public class SuccessfulRegistrationTest extends BaseTest {
         CreateAnAccountPage createAnAccountPage = new CreateAnAccountPage(getDriver());
         NewAccount newAccountData = deserializeJson("createAccount.json", NewAccount.class);
 
+        //Pre-condition
         landingPage.load("/");
         Thread.sleep(5000);
 

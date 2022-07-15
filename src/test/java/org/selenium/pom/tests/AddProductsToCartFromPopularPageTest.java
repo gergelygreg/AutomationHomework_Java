@@ -53,7 +53,7 @@ public class AddProductsToCartFromPopularPageTest extends BaseTest {
                 .load("/");
         Thread.sleep(5000);
 
-        //Pre-condition
+        //Test
         landingPage
                 .addFadedShortToCart();
         Assert.assertTrue(landingPage.headerTextValidationShoppingCart());
