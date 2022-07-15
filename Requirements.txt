@@ -1,0 +1,79 @@
+I.Pre-Requisites:
+Software:
+Java JDK: 8/11 LTS/Latest/17 LTS
+IDE: IntelliJ/Eclipse
+
+Jars: 
+Selenium: 3.141/4/Latest
+TestNG: 7.4.0/Latest
+
+Build automation tool: 
+Maven
+
+*****************************************************************
+II.Setup Java JDK
+-Launch Command Prompt
+-Check whether java is installed or not: java -version
+-If you get an output like this: "'java' is not recognized as an internal or external
+command, operable program or batch file.'-> download java jdk
+https://www.oracle.com/java/technologies/downloads/
+-Set environment variable: 
+Edit the system environment variables(Control Panel)-> Environment Variables->
+System variables-> New->
+Variable name: JAVA_HOME, Variable value: default path (E.g.: "C:\Program Files\Java\jdk-18.0.1.1")-> Ok->
+System variables-> Path-> Edit-> New-> "%JAVA_HOME%\bin"-> Enter-> Ok 
+-Launch Command Prompt again
+-Check java version: java -version
+
+*****************************************************************
+III.Setup project using IntelliJ (Optional, you can use Eclipse as well)
+-Download IntelliJ IDE: Community version
+https://www.jetbrains.com/idea/download/#section=windows
+-Create Maven project
+-Set dependencies for project in the "pom.xml" file: selenium-java, testNG
+https://mvnrepository.com/search?q=selenium+java
+
+<dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.6.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.2.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+</dependencies>
+
+
+*****************************************************************
+IV.Setup Driver Executable using System Property
+-Download Webdrivers
+https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
+-Use "System.setProperty("webdriver.chrome.driver","/path/to/chromedriver");" (It is hardcoded->Not Recommended) 
+
+
+*****************************************************************
+V.Setup Driver Executable using Environment Variable(Recommended)
+-Download Webdrivers
+https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
+-Set environment variable: 
+Edit the system environment variables(Control Panel)-> Environment Variables->
+System variables-> Path-> Edit-> New-> Insert here the path of the directory that contains the chromedriver/any driver executable-> Ok  
+-Launch Command Prompt
+-Check if the path is resolved: chromedriver
+-Restart IntelliJ
+
